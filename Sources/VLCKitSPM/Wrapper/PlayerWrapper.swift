@@ -31,7 +31,7 @@ public class PlayerWrapper: NSObject, ObservableObject {
         super.init()
         let mediaPlayer = VLCMediaPlayer(options: [
             "--verbose=4",
-            "--rtsp-tcp=1",
+            "--rtsp-tcp",
             "--no-color",
             "--no-osd",
             "--no-mouse-events",
