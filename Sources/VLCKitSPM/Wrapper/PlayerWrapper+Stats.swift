@@ -2,25 +2,28 @@ import Foundation
 
 extension PlayerWrapper {
     public struct Stats {
-        var timeString = "--:--"
-        var codec: Int = 0
-        var width: Int = 0
-        var height: Int = 0
+        public var timeString = "--:--"
+        public var codec: Int = 0
+        public var codecFourCC: String {
+            fromFourCC(codec)
+        }
+        public var width: Int = 0
+        public var height: Int = 0
+
+        public var readBytes: Int = 0
+        public var inputBitrate: Double = 0.0
+        public var demuxBitrate: Double = 0.0
         
-        var readBytes: Int = 0
-        var inputBitrate: Double = 0.0
-        var demuxBitrate: Double = 0.0
-        
-        var inputBitrate_kb_per_sec: Int {
+        public var inputBitrate_kb_per_sec: Int {
             return Int(inputBitrate * 1000.0 * 8)
         }
-        var demuxBitrate_kb_per_sec: Int {
+        public var demuxBitrate_kb_per_sec: Int {
             return Int(demuxBitrate * 1000.0 * 8)
         }
         
-        var decodedVideo: Int = 0
-        var displayedPictures: Int = 0
-        var lostPictures: Int = 0
+        public var decodedVideo: Int = 0
+        public var displayedPictures: Int = 0
+        public var lostPictures: Int = 0
         
         // Create a String representation of a FourCC
         private func fromFourCC(_ fourcc: Int) -> String {
