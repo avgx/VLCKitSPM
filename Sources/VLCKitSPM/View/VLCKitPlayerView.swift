@@ -1,7 +1,7 @@
 import UIKit
 import SwiftUI
 
-public struct PlayerView: UIViewRepresentable {
+public struct VLCKitPlayerView: UIViewRepresentable {
     @EnvironmentObject var playerWrapper: PlayerWrapper
     
     public init() {
@@ -36,9 +36,9 @@ public struct PlayerView: UIViewRepresentable {
     }
     
     public class Coordinator: NSObject {
-        var parent: PlayerView
+        var parent: VLCKitPlayerView
         
-        public init(_ parent: PlayerView) {
+        public init(_ parent: VLCKitPlayerView) {
             self.parent = parent
             super.init()
             //mediaPlayer.delegate = self
